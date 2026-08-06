@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nite Owls</title>
+<meta name="description" content="Movies, shows, and a couple of game servers, running for family and friends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+<div class="sky">
+  <svg class="starfield" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <line x1="80" y1="90" x2="180" y2="150"/>
+    <line x1="180" y1="150" x2="150" y2="240"/>
+    <line x1="780" y1="80" x2="850" y2="170"/>
+    <line x1="850" y1="170" x2="760" y2="200"/>
+    <line x1="60" y1="780" x2="130" y2="850"/>
+    <line x1="130" y1="850" x2="90" y2="920"/>
+    <line x1="880" y1="750" x2="930" y2="830"/>
+    <circle cx="80" cy="90" r="2.5"/>
+    <circle cx="180" cy="150" r="2"/>
+    <circle cx="150" cy="240" r="1.6"/>
+    <circle cx="780" cy="80" r="2"/>
+    <circle cx="850" cy="170" r="2.5"/>
+    <circle cx="760" cy="200" r="1.6"/>
+    <circle cx="60" cy="780" r="2"/>
+    <circle cx="130" cy="850" r="2.5"/>
+    <circle cx="90" cy="920" r="1.6"/>
+    <circle cx="880" cy="750" r="2"/>
+    <circle cx="930" cy="830" r="1.6"/>
+    <circle cx="450" cy="60" r="1.4"/>
+    <circle cx="550" cy="320" r="1.4"/>
+    <circle cx="320" cy="480" r="1.6"/>
+    <circle cx="680" cy="520" r="1.4"/>
+    <circle cx="230" cy="620" r="1.4"/>
+    <circle cx="920" cy="420" r="1.6"/>
+    <circle cx="500" cy="900" r="1.4"/>
+    <circle cx="40" cy="480" r="1.4"/>
+    <circle cx="960" cy="580" r="1.4"/>
+  </svg>
+
+  <div class="page">
+    <div class="hero">
+      <img src="./assets/nite-owls-logo.png" alt="Nite Owls">
+      <p class="eyebrow">Mapped for family &amp; friends</p>
+      <p class="lede">Movies, shows, and a couple of game servers, running for family and friends. Pick what you want below.</p>
+    </div>
+
+    <div class="card-grid">
+
+      <a href="./plex.html" class="card">
+        <div class="card-top">
+          <span class="card-category">Media Server</span>
+          <span class="status" data-status-for="plex">
+            <span class="status-dot"></span>
+            <span data-status-label>Offline</span>
+          </span>
+        </div>
+        <h2>Plex</h2>
+        <p>Movies and TV, ready to stream on your phone, TV, or laptop.</p>
+        <span class="card-cta">Get set up →</span>
+      </a>
+
+      <a href="./sdtd.html" class="card">
+        <div class="card-top">
+          <span class="card-category">Game Server</span>
+          <span class="status" data-status-for="sdtd">
+            <span class="status-dot"></span>
+            <span data-status-label>Offline</span>
+          </span>
+        </div>
+        <h2>7 Days to Die</h2>
+        <p>Survival, zombies, and a password-protected world for the crew.</p>
+        <span class="card-cta">Get set up →</span>
+      </a>
+
+      <a href="./vintagestory.html" class="card">
+        <div class="card-top">
+          <span class="card-category">Game Server</span>
+          <span class="status" data-status-for="vintagestory">
+            <span class="status-dot"></span>
+            <span data-status-label>Offline</span>
+          </span>
+        </div>
+        <h2>Vintage Story</h2>
+        <p>A slower-paced survival world, up whenever you want to play.</p>
+        <span class="card-cta">Get set up →</span>
+      </a>
+
+    </div>
+
+    <footer class="hint">Something not working? Just ask.</footer>
+  </div>
+</div>
+<script src="./assets/status.js"></script>
+</body>
+</html>
