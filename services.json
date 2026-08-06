@@ -1,4 +1,8 @@
 {
-  "updatedAt": null,
-  "services": {}
+  "updatedAt": "2026-08-06T02:02:45.335Z",
+  "services": {
+    "plex": false,
+    "sdtd": false,
+    "vintagestory": false
+  }
 }
