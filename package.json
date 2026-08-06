@@ -1,0 +1,11 @@
+{
+  "name": "nitewalkers-landing-page",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-services": "node scripts/check-services.mjs"
+  },
+  "dependencies": {
+    "gamedig": "^5.3.3"
+  }
+}

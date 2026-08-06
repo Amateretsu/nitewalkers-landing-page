@@ -1,0 +1,45 @@
+name: Update service status
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-service-status
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check service status
+        env:
+          SERVICE_CHECKS: ${{ secrets.SERVICE_CHECKS }}
+        run: npm run check-services
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add services.json
+          if git diff --cached --quiet; then
+            echo "No status change, skipping commit."
+          else
+            git commit -m "chore: update service status"
+            git push
+          fi
