@@ -30,6 +30,12 @@ async function checkHttp(host, port, path) {
   }
 }
 
+// Node/undici error `code` values (e.g. ENOTFOUND, ECONNREFUSED, ETIMEDOUT)
+// are safe to log — unlike `.message`, they never embed the host/port.
+function classify(error) {
+  return error.cause?.code ?? error.code ?? error.name ?? 'unknown';
+}
+
 async function checkService(key, entry) {
   try {
     if (entry.check === 'gamedig') {
@@ -40,10 +46,8 @@ async function checkService(key, entry) {
       throw new Error(`unknown check type "${entry.check}"`);
     }
     return true;
-  } catch {
-    // Deliberately not logging the caught error — it can echo back the
-    // host/port being checked, which must not appear in a public log.
-    console.log(`${key}: unreachable`);
+  } catch (error) {
+    console.log(`${key}: unreachable (${classify(error)})`);
     return false;
   }
 }
