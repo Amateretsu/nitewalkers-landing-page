@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-16T06:54:46.834Z",
+  "updatedAt": "2026-10-16T12:12:42.090Z",
   "services": {
-    "plex": true,
+    "plex": false,
     "sdtd": false,
     "vintagestory": false
   }
